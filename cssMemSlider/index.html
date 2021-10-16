@@ -4,32 +4,52 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
     <title>cssMemSlider</title>
 </head>
 <body>
-    <section class="bacground">
+    <section class="background">
         <div class="wrapper">
             <div class="inner-wrapper">
-                <input type="radio" id="slide-1">
+                <form>
+                <input class="checked-item" type="radio" id="slide-1" name="img" aria-hidden="true" hidden="" checked="checked">
                 <div class="image">
-                    <img src="">
+                    <img src="assets/img-1.jpg">
                 </div>
 
-                <input type="radio" id="slide-1">
+                <input class="checked-item" type="radio" id="slide-2" name="img" aria-hidden="true" hidden="">
                 <div class="image">
-                    <img src="">
+                    <img src="assets/img-2.png">
                 </div>
 
-                <input type="radio" id="slide-1">
+                <input class="checked-item" type="radio" id="slide-3" name="img" aria-hidden="true" hidden="">
                 <div class="image">
-                    <img src="">
+                    <img src="assets/img-4.jpg">
                 </div>
 
-                <input type="radio" id="slide-1">
+                <input class="checked-item" type="radio" id="slide-4" name="img" aria-hidden="true" hidden="">
                 <div class="image">
-                    <img src="">
+                    <img src="assets/7.jpg">
                 </div>
+
+                <ul class="list-controls">
+                    <li>
+                        <label class="control-1" for="slide-1"><span class="control-botton"></span></label>
+                    </li>
+                    <li>
+                        <label class="control-2" for="slide-2"><span class="control-botton"></span></label>
+                    </li>
+                    <li>
+                        <label class="control-3" for="slide-3"><span class="control-botton"></span></label>
+                    </li>
+                    <li>
+                        <label class="control-4" for="slide-4"><span class="control-botton"></span></label>
+                    </li>
+                </ul>
+
+            </form>
             </div>
+           
         </div>
     </section>
 </body>
