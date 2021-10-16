@@ -20,31 +20,40 @@ html {
 }
 .inner-wrapper {
     position: relative;
-    display: block;
-    width: 1200px;
-    height: 1000px;
-    /*overflow: hidden;*/
+    overflow: hidden;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
 }
 .image {
-    width: 100%;
+    width: 10%;
     height: 80vh;
     display: none;
-    opacity: 0;
-    -webkit-transition: opacity 0.6s ease-out;
-    transition: opacity 0.6s ease-out;
+    -webkit-transition: width 0.6s ease-out;
+    transition: width 0.6s linear;
 }
-image {
+img {
     width: 100%;
     height: auto;
+    
 }
+@keyframes example {
+    0%   {width: 0%;}
+    /*25%  {width: 25%;}*/
+    50%  {width: 50%;}
+    /*75%  {width: 75%;}*/
+    100% {width: 100%;}
+  }
+
 .checked-item:checked + .image {
-    opacity: 100;
     display: block;
+    animation-name: example;
+    animation-duration: 1s;
+    animation-timing-function: linear;
+    width: 100%;
 }
+
 .list-controls {
     list-style: none;
     display: flex;
@@ -52,17 +61,56 @@ image {
 }
 .control-botton {
     display: block;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+   
     background-color: gray;
-    margin: 25px;
+    margin: 10px;
 }
-.control {
+/*.control {
     display: block;
+}
+.checked-item:checked .control-botton {
+    background-color: green;
+}
+#slide-1:checked .control-botton {
+    background-color: green;
+}
+#slide-1:checked ~ .control-1 ~ .list-controls li:nth-child(1) .control-botton,
+#slide-2:checked ~ .control-2 ~ .list-controls li:nth-child(2) .control-botton,
+#slide-3:checked ~ .control-3 ~ .list-controls li:nth-child(3) .control-botton {
+    color: #428bca;
 }
 #slide-1:checked ~ .control-1,
 #slide-2:checked ~ .control-2,
-#slide-3:checked ~ .control-3 {
+#slide-3:checked ~ .control-3 .control-botton {
     display: block;
+    background-color: green;
+}
+.control-1:checked~.control-botton {
+    background-color: green;
+}
+.control-2:checked~.control-botton {
+    background-color: #428bca;
+}*/
+li {
+    display: block;
+    width: 40px;
+    height: 40px;
+}
+li:hover .control-botton{
+    cursor: pointer;
+    background-color: olive;
+    transform: scale(1.5);
+}
+li:active .control-botton{
+    background-color: #000;
+} 
+
+#slide-1:checked ~.list-controls .control-1 > .control-botton,
+#slide-2:checked ~.list-controls .control-2 > .control-botton,
+#slide-3:checked ~.list-controls .control-3 > .control-botton,
+#slide-4:checked ~.list-controls .control-4 > .control-botton,
+#slide-5:checked ~.list-controls .control-5 > .control-botton {
+    background-color: #000;   
 }
