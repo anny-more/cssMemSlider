@@ -6,12 +6,16 @@ html {
 *, *::before, *::after {
     box-sizing: inherit;
    }
+body {
+    margin: 0;
+}
 .background {
     display: flex;
     justify-content: space-around;
     justify-items: center;
     width: 100%;
     height: 100%;
+    background-color: lightgreen;
 }
 .wrapper {
    
@@ -67,37 +71,11 @@ img {
     background-color: gray;
     margin: 10px;
 }
-/*.control {
-    display: block;
-}
-.checked-item:checked .control-botton {
-    background-color: green;
-}
-#slide-1:checked .control-botton {
-    background-color: green;
-}
-#slide-1:checked ~ .control-1 ~ .list-controls li:nth-child(1) .control-botton,
-#slide-2:checked ~ .control-2 ~ .list-controls li:nth-child(2) .control-botton,
-#slide-3:checked ~ .control-3 ~ .list-controls li:nth-child(3) .control-botton {
-    color: #428bca;
-}
-#slide-1:checked ~ .control-1,
-#slide-2:checked ~ .control-2,
-#slide-3:checked ~ .control-3 .control-botton {
-    display: block;
-    background-color: green;
-}
-.control-1:checked~.control-botton {
-    background-color: green;
-}
-.control-2:checked~.control-botton {
-    background-color: #428bca;
-}*/
-li {
+/*li {
     display: block;
     width: 40px;
     height: 40px;
-}
+}*/
 li:hover .control-botton{
     cursor: pointer;
     background-color: olive;
@@ -107,10 +85,49 @@ li:active .control-botton{
     background-color: #000;
 } 
 
-#slide-1:checked ~.list-controls .control-1 > .control-botton,
-#slide-2:checked ~.list-controls .control-2 > .control-botton,
-#slide-3:checked ~.list-controls .control-3 > .control-botton,
-#slide-4:checked ~.list-controls .control-4 > .control-botton,
-#slide-5:checked ~.list-controls .control-5 > .control-botton {
+#slide-1:checked ~.inner-wrapper-text .control-1 > .control-botton,
+#slide-2:checked ~.inner-wrapper-text .control-2 > .control-botton,
+#slide-3:checked ~.inner-wrapper-text .control-3 > .control-botton,
+#slide-4:checked ~.inner-wrapper-text .control-4 > .control-botton,
+#slide-5:checked ~.inner-wrapper-text .control-5 > .control-botton {
     background-color: #000;   
+}
+.inner-wrapper-text {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    width: 100%;
+    height: 8rem;
+}
+
+/*.text {
+    display: flex;
+    flex-direction: row;
+    overflow: hidden;
+    justify-content: right;
+    width: 500%;
+    height: 100%;
+}*/
+.item-text {
+   display: none;
+   transition: ease-in-out 0.3;
+}
+@keyframes for-text {
+    0%   {translate: -40px;}
+    /*25%  {width: 25%;}*/
+    50%  {translate: 0px;}
+    /*75%  {width: 75%;}*/
+    100% {translate: 40px;}
+  }
+
+#slide-1:checked ~.inner-wrapper-text .text>.text1,
+#slide-2:checked ~.inner-wrapper-text .text>.text2,
+#slide-3:checked ~.inner-wrapper-text .text>.text3,
+#slide-4:checked ~.inner-wrapper-text .text>.text4,
+#slide-5:checked ~.inner-wrapper-text .text>.text5 {
+    display: block;
+    transition: ease-in-out 0.3;
+    animation-name: for-text;
+    animation-duration: 1s;
+    animation-timing-function: linear;
 }
