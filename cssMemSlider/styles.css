@@ -121,6 +121,7 @@ li:active .control-botton{
    overflow: hidden;
 }
 .item-text {
+    margin-left: 5px;
     color: rgb(46, 56, 46);
     font-size: 1.5rem;
    display: none;
@@ -144,13 +145,23 @@ li:active .control-botton{
 ul {
     padding: 0;
 }
+@media (max-width: 1024px) {
+    .inner-wrapper-text {
+        justify-content: space-around;
+    }
+}
 @media (max-width: 768px) {
     .inner-wrapper-text {
         flex-direction: column;
-        justify-content: center;
+        justify-content: space-around;
         align-items: center;
     }
     .text {
         order: 2;
+    }
+}
+@media (max-width: 320px) {
+    h1 {
+        font-size: 2rem;
     }
 }
