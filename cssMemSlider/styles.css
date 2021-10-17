@@ -14,12 +14,12 @@ body {
     justify-content: space-around;
     justify-items: center;
     width: 100vw;
-    height: 100vhgi;
+    height: 100vh;
     background-color: lightgreen;
 }
 .wrapper {
    
-    min-width: 80%;
+    min-width: 70%;
     margin: auto;
 }
 .inner-wrapper {
@@ -32,26 +32,27 @@ body {
 }
 .image {
     display: none;
+    max-width: 750px;
+    max-height: 750px;
+    width: 100%;
 }
 img {
     width: 100%;
     height: auto;
-    
 }
-@keyframes example {
-    0%   {width: 0%;}
-    /*25%  {width: 25%;}*/
-    50%  {width: 50%;}
-    /*75%  {width: 75%;}*/
-    100% {width: 100%;}
-  }
-
+    
+    @keyframes for-img {
+        0%   { transform: translate(-300%, 0);}
+        /*25%  {width: 25%;}*/
+        50%   { transform: translate(-150%, 0);}
+        /*75%  {width: 75%;}*/
+        100%  { transform: translate(0, 0);}
+      }
 .checked-item:checked + .image {
     display: block;
-    animation-name: example;
+    animation-name: for-img;
     animation-duration: 1s;
     animation-timing-function: linear;
-    width: 100%;
 }
 
 .list-controls {
@@ -96,9 +97,9 @@ li:active .control-botton{
     height: 8rem;
 }
 @keyframes for-text {
-    0%   { transform: translate(-300%, 0);}
+    0%   { transform: translate(200%, 0);}
     /*25%  {width: 25%;}*/
-    50%   { transform: translate(-150%, 0);}
+    50%   { transform: translate(100%, 0);}
     /*75%  {width: 75%;}*/
     100%  { transform: translate(0, 0);}
   }
